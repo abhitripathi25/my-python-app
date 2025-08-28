@@ -4,7 +4,8 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/<your-username>/my-python-app.git'
+                git branch: 'abhishek',
+                    url: 'https://github.com/abhitripathi25/my-python-app.git'
             }
         }
 
