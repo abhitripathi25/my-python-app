@@ -1,0 +1,19 @@
+name: Python CI
+
+on: [push]   # Jab bhi code push hoga, tab yeh run hoga
+
+jobs:
+  build:
+    runs-on: ubuntu-latest   # GitHub pe ek Ubuntu VM milega
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2   # Repo ka code clone karega
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'   # Python install karega
+
+    - name: Run Python script
+      run: python app.py
